@@ -1,0 +1,46 @@
+{
+  "chainId": "likecoin-skynet-1",
+  "chainName": "LikeCoin SkyNet",
+  "rpc": "http://52.148.89.139:26657",
+  "rest": "http://52.148.89.139:1317",
+  "stakeCurrency": {
+    "coinDenom": "LIKE",
+    "coinMinimalDenom": "nanolike",
+    "coinDecimals": 9,
+    "coinGeckoId": "likecoin"
+  },
+  "bip44": {
+    "coinType": 118
+  },
+  "bech32Config": {
+    "bech32PrefixAccAddr": "cosmos",
+    "bech32PrefixAccPub": "cosmospub",
+    "bech32PrefixValAddr": "cosmosvaloper",
+    "bech32PrefixValPub": "cosmosvaloperpub",
+    "bech32PrefixConsAddr": "cosmosvalcons",
+    "bech32PrefixConsPub": "cosmosvalconspub"
+  },
+  "currencies": [
+    {
+      "coinDenom": "LIKE",
+      "coinMinimalDenom": "nanolike",
+      "coinDecimals": 9,
+      "coinGeckoId": "likecoin"
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "LIKE",
+      "coinMinimalDenom": "nanolike",
+      "coinDecimals": 9,
+      "coinGeckoId": "likecoin"
+    }
+  ],
+  "coinType": 118,
+  "gasPriceStep": {
+    "low": 1,
+    "average": 10,
+    "high": 1000
+  },
+  "features": ["stargate", "ibc-transfer"]
+}
