@@ -1,8 +1,8 @@
 {
   "chainId": "likecoin-skynet-1",
   "chainName": "LikeCoin SkyNet",
-  "rpc": "http://52.148.89.139:26657",
-  "rest": "http://52.148.89.139:1317",
+  "rpc": "http://52.187.27.20:26657",
+  "rest": "http://52.187.27.20:1317",
   "stakeCurrency": {
     "coinDenom": "LIKE",
     "coinMinimalDenom": "nanolike",
