@@ -16,3 +16,9 @@ Base on Cosmos SDK v0.42.11
 ## Seed Nodes
 
 `38d4770245a3f50da3d6e12ff25eaa7065cec431@52.148.89.139:26656`
+
+## Keplr
+
+Navigate to the our dedicated [site](https://ipfs.io/ipfs/Qme95TC2um4cxqrS1CLxBRWA5R5snftUHEwyWNMBFrVTkb) hosted on ipfs on Google Chrome with Keplr installed
+
+Click `Click to Add` button to add the chain via the Suggest Chain API

@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <script>
+      const keplrConfigUrl =
+        "https://raw.githubusercontent.com/oursky/likecoin-skynet/master/keplr.json";
+
+      async function addToKeplr() {
+        const keplrJson = await fetch(keplrConfigUrl).then((res) => res.json());
+        await window.keplr.experimentalSuggestChain(keplrJson);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="addToKeplr()">Click to Add</button>
+  </body>
+</html>
