@@ -13,9 +13,14 @@ Base on Cosmos SDK v0.42.11
 `00477f298090207c4d385919ebd4ca06755c4934893c5b57e55c5dd76bd154a5`
 [`genesis.json`](./genesis.json)
 
+https://raw.githubusercontent.com/oursky/likecoin-skynet/master/genesis.json
+
 ## Seed Nodes
 
-`38d4770245a3f50da3d6e12ff25eaa7065cec431@52.148.89.139:26656`
+```
+76a756b05f8566ea3522a3e3859b962426469288@52.187.27.20:26656 // Azure
+8b888351e851146140e0be98626e8f9ada805733@34.124.211.150:26656 // GCP
+```
 
 ## Keplr
 
