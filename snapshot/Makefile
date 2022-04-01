@@ -1,4 +1,5 @@
-SNAPSHOT_DIR ?= ./snapshots
+CWD := $(shell cd -P -- '$(shell dirname -- "$0")' && pwd -P)
+SNAPSHOT_DIR ?= $(CWD)/snapshots
 SNAPSHOT_FILENAME ?= snapshot.tar.gz
 AZURE_STORAGE_ACCOUNT ?= likecoinskynet
 AZURE_SNAPSHOT_CONTAINER ?= snapshot
@@ -17,7 +18,7 @@ restore:
 	sudo systemctl stop liked
 	${LIKED_BINARY} unsafe-reset-all
 	./restore.sh "${HOME}/.liked" "${SNAPSHOT_DIR}/${SNAPSHOT_FILENAME}"
-	sudo systemctl start liked 
+	sudo systemctl start liked
 
 
 .PHONY: azcopy-login
@@ -30,5 +31,4 @@ upload-snapshot: azcopy-login
 
 .PHONY: download-snapshot
 download-snapshot: azcopy-login
-	azcopy copy ${SNAPSHOT_BLOB_URL} "${SNAPSHOT_DIR}/${SNAPSHOT_FILENAME}"
-
+	azcopy sync ${SNAPSHOT_BLOB_URL} "${SNAPSHOT_DIR}/${SNAPSHOT_FILENAME}"

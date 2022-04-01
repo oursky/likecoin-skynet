@@ -2,11 +2,11 @@
 LIKED_HOME="$1"
 OUTPUT="$2"
 
-if [ -z "$LIKED_HOME"]; then
+if [ -z "$LIKED_HOME" ]; then
     LIKED_HOME="$HOME/.liked"
 fi
 
-if [ -z "$OUTPUT"]; then
+if [ -z "$OUTPUT" ]; then
     OUTPUT="$PWD/snapshots/snapshot.tar.gz"
 elif [ -d "$OUTPUT" ]; then
     OUTPUT="$OUTPUT/snapshot.tar.gz"
@@ -21,7 +21,7 @@ if [ -f "$OUTPUT" ]; then
                 No ) exit;;
             esac
         done
-    fi 
+    fi
 fi
 
 if [ ! -d "$LIKED_HOME/data/application.db" ] || [ ! -d "$LIKED_HOME/data/blockstore.db" ] || \
@@ -31,8 +31,7 @@ if [ ! -d "$LIKED_HOME/data/application.db" ] || [ ! -d "$LIKED_HOME/data/blocks
 fi
 
 cd $LIKED_HOME
-tar -czPf $OUTPUT --exclude=./data/priv_validator_state.json --exclude=./data/snapshots ./data/
+tar czPf $OUTPUT --exclude=./data/priv_validator_state.json --exclude=./data/snapshots ./data/
 cd -
 
 echo "Created $OUTPUT"
-
