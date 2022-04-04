@@ -2,11 +2,29 @@
 
 Chain ID: `likecoin-skynet-1`
 
-## Current Software Version
+## Software Version
 
-[v1.2.0-rc3](https://github.com/likecoin/likecoin-chain/releases/tag/fotan-1.2) [`9bc9e51503214974cf70e1e2e8dd27b05ae91f9b`](https://github.com/likecoin/likecoin-chain/commit/9bc9e51503214974cf70e1e2e8dd27b05ae91f9b)
+latest release from the [Oursky repo](https://github.com/oursky/likecoin-chain/releases)
 
-Base on Cosmos SDK v0.42.11
+Currently skynet is set to check for minor updates every Wednesday 00:00AM HKT using cronjob, in which a new binary will be swapped when a new update is downloaded.
+
+The script is executed with the following cron command
+```
+0 0 * * 3 DAEMON_NAME=liked DAEMON_HOME=~/.liked /home/likecoin/upgrade/upgrade.sh > ~/upgrade/upgrade.log 2>&1
+```
+
+The script can be located at [upgrade.sh](./upgrade/upgrade.sh)
+
+## Backup
+
+Prior to updates checks, a snapshot will be taken and uploaded to an azure storage managed by Oursky every Tuesday 23:00PM HKT. This is in case of any unexpected errors yieled from the binary swap so that we can rollback to the latest snapshot.
+
+The script is executed with the following cron command
+```
+0 23 * * 2 make -f ~/snapshot/Makefile -C ~/snapshot backup SKIP_CONFIRM=1 > ~/snapshot/backup.log 2>&1;make -f ~/snapshot/Makefile -C ~/snapshot upload-snapshot
+```
+
+The script can be located at [backup.sh](./snapshot/backup.sh)
 
 ## Genesis
 
