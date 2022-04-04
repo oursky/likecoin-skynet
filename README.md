@@ -2,6 +2,15 @@
 
 Chain ID: `likecoin-skynet-1`
 
+# Endpoints
+
+RPC
+52.187.27.20:26657
+34.124.211.150:26657
+
+REST
+52.187.27.20:1317
+
 ## Software Version
 
 latest release from the [Oursky repo](https://github.com/oursky/likecoin-chain/releases)
