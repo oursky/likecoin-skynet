@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 LIKED_REPOSITORY=oursky/likecoin-chain
 COSMOVISOR_BINARY=~/cosmovisor
@@ -21,9 +21,9 @@ git -c 'versionsort.suffix=-' ls-remote \
 	--tags https://github.com/$LIKED_REPOSITORY.git | \
 	sed -E 's|.*refs/tags/v(.+)|\1|' | \
 	grep $BASE_VERSION | \
-	grep -v $CURRENT_VERSION | \
 	sort -rV | \
-	head -n1
+	head -n1 | \
+	grep -v $CURRENT_VERSION
 `
 
 if [ -z "$LATEST_VERSION" ]; then
